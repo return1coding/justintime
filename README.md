@@ -1,16 +1,33 @@
-# justintime
+# JUST IN timE
 
-Simple time table app
+<img src="./readmeimages/icondesign-01.png" width="200">
 
-## Getting Started
+Simple time table app made with Flutter!
 
-This project is a starting point for a Flutter application.
+## Current Status
+The app has been submitted to the play store and is awaiting review.
 
-A few resources to get you started if this is your first Flutter project:
+## Implemented
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+ - Add and remove timetable entries. 
+ - Select color of each entry.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Upcoming
+
+ - Sort entries by time
+ - Edit entries on tap
+ - Hero animations
+ 
+## Database
+
+ - Local SQFlite (using [Moor flutter package](https://pub.dev/packages/moor_flutter)) 
+
+## Possible improvements
+
+ - Replace Moor flutter package with [Hive flutter package](https://pub.dev/packages/hive). Much faster and suited for this use case.
+
+
+## Creator:
+<img src="./readmeimages/minimized_lightred_logo-01-01-01-01.png" width="200">
+Instagram : https://www.instagram.com/return1coding/
+Email : return1coding@gmail.com
