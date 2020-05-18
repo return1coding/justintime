@@ -32,8 +32,6 @@ const PickerData2 = '''
 ]
     ''';
 
-
-
 TextStyle kInputPageFontStyle =
     TextStyle(color: Color(0xFF35C900), fontSize: 15, fontFamily: 'Code8x8');
 
@@ -118,7 +116,7 @@ class _itemEditPageState extends State<itemEditPage> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
                   SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 15),
@@ -131,18 +129,18 @@ class _itemEditPageState extends State<itemEditPage> {
                   Container(
                     height: 50,
                     width: 400,
-                    child: TextField(
-                      style: kInputPageFontStyle.copyWith(fontSize: 13),
-                      cursorWidth: 10,
-                      cursorColor: kInputPageFontStyle.color,
-                      controller: classNameController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 15, top: 15),
+                      child: Text(
+                        thisListItemObj.itemName,
+                        style: kInputPageFontStyle.copyWith(
+                          color: Colors.greenAccent,
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
                   Container(
                     padding: EdgeInsets.only(left: 15),
@@ -155,186 +153,83 @@ class _itemEditPageState extends State<itemEditPage> {
                   Container(
                     height: 50,
                     width: 400,
-                    child: TextField(
-                      style: kInputPageFontStyle.copyWith(fontSize: 13),
-                      cursorWidth: 10,
-                      cursorColor: kInputPageFontStyle.color,
-                      controller: locationController,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                    child: Container(
+                      padding: EdgeInsets.only(left: 15, top: 15),
+                      child: Text(
+                        thisListItemObj.itemLocation,
+                        style: kInputPageFontStyle.copyWith(
+                          color: Colors.greenAccent,
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
-                  Row(
-                    children: <Widget>[
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.only(left: 15),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Day",
-                            style: kInputPageFontStyle,
-                          ),
+                  Container(
+                    padding: EdgeInsets.only(left: 15),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Day",
+                      style: kInputPageFontStyle,
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 400,
+                    child: Container(
+                      padding: EdgeInsets.only(left: 15, top: 15),
+                      child: Text(
+                        thisListItemObj.itemDay,
+                        style: kInputPageFontStyle.copyWith(
+                          color: Colors.greenAccent,
                         ),
                       ),
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          height: 50,
-                          width: 400,
-                          child: FlatButton(
-                            color: Colors.black,
-                            child: Text(
-                              selectedDay == null ? "SELECT" : selectedDay,
-                              style: kInputPageFontStyle.copyWith(fontSize: 12),
-                            ),
-                            onPressed: () {
-                              showPickerArray(context);
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 15,
                   ),
-                  Row(
-                    children: <Widget>[
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.only(left: 15),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Time",
-                            style: kInputPageFontStyle,
-                          ),
+                  Container(
+                    padding: EdgeInsets.only(left: 15),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Time",
+                      style: kInputPageFontStyle,
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 400,
+                    child: Container(
+                      padding: EdgeInsets.only(left: 15, top: 15),
+                      child: Text(
+                        thisListItemObj.itemTime,
+                        style: kInputPageFontStyle.copyWith(
+                          color: Colors.greenAccent,
                         ),
                       ),
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          height: 50,
-                          width: 400,
-                          child: FlatButton(
-                            color: Colors.black,
-                            child: Text(
-                              pickedTime == null ? "SELECT" : pickedTime,
-                              style: kInputPageFontStyle.copyWith(fontSize: 12),
-                            ),
-                            onPressed: () {
-                              DatePicker.showTimePicker(context,
-                                  showTitleActions: true,
-                                  showSecondsColumn: false,
-                                  theme: DatePickerTheme(
-                                      itemHeight: 50,
-                                      backgroundColor: Colors.black,
-                                      doneStyle: kInputPageFontStyle,
-                                      itemStyle: kInputPageFontStyle),
-                                  onChanged: (time) {
-                                print('change $time');
-                              }, onConfirm: (time) {
-                                print('confirm $time');
-                                pickedTime = time.hour.toString() +
-                                    " : " +
-                                    time.minute.toString();
-                                print(pickedTime);
-                              },
-                                  currentTime: DateTime.now(),
-                                  locale: LocaleType.en);
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 15,
                   ),
-                  Row(
-                    children: <Widget>[
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.only(left: 15),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Color",
-                            style: kInputPageFontStyle,
-                          ),
-                        ),
-                      ),
-                      Flexible(
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          height: 50,
-                          width: 400,
-                          child: FlatButton(
-                            color: selectedColor == null
-                                ? Colors.black
-                                : Color(int.parse(selectedColor)),
-                            child: Text(
-                              selectedColor == null ? "SELECT" : " ",
-                              style: kInputPageFontStyle.copyWith(fontSize: 12),
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (_) => AlertDialog(
-                                  title: Text(
-                                    "Pick Color",
-                                    style: kInputPageFontStyle,
-                                  ),
-                                  backgroundColor: Colors.black,
-                                  content: MaterialColorPicker(
-                                      onMainColorChange: (Color color) {
-                                        selectedColor =
-                                            color.value.toInt().toString();
-                                        print(color.value.toInt().toString());
-                                      },
-                                      spacing: 20.0,
-                                      elevation: 0,
-                                      shrinkWrap: true,
-                                      allowShades: false,
-                                      colors: [
-                                        Colors.red,
-                                        Colors.deepOrange,
-                                        Colors.yellow,
-                                        Colors.lightGreen,
-                                        Colors.lightBlue,
-                                        Colors.blue,
-                                        Colors.purple
-                                      ],
-                                      selectedColor: Colors.red),
-                                  actions: [
-                                    FlatButton(
-                                      child: Text(
-                                        'CANCEL',
-                                        style: kInputPageFontStyle.copyWith(
-                                            fontSize: 10),
-                                      ),
-                                      onPressed: Navigator.of(context).pop,
-                                    ),
-                                    FlatButton(
-                                      child: Text('SUBMIT',
-                                          style: kInputPageFontStyle.copyWith(
-                                              fontSize: 10)),
-                                      onPressed: () {
-                                        Navigator.of(context).pop();
-                                        print("hello");
-                                        print(selectedColor);
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
+                  Container(
+                    padding: EdgeInsets.only(left: 15),
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      "Color",
+                      style: kInputPageFontStyle,
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(15),
+                    color: Color(int.parse(thisListItemObj.itemColor)),
+                    height: 50,
+                    width: 400,
+                    child: Container(
+                      padding: EdgeInsets.only(left: 15, top: 15),
+                    ),
                   ),
                 ],
               ),
