@@ -129,7 +129,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   StreamBuilder<List<ListItem>> _buildMondayList(BuildContext context) {
     final database = Provider.of<AppDatabase>(context);
     return StreamBuilder(
-        stream: database.watchAllListItems(),
+        stream: database.watchAllListItemsSort(),
         builder: (context, AsyncSnapshot<List<ListItem>> snapshot) {
           final listitems =
               snapshot.data.where((c) => c.itemDay == "MONDAY").toList() ??
@@ -146,7 +146,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   StreamBuilder<List<ListItem>> _buildTuesdayList(BuildContext context) {
     final database = Provider.of<AppDatabase>(context);
     return StreamBuilder(
-        stream: database.watchAllListItems(),
+        stream: database.watchAllListItemsSort(),
         builder: (context, AsyncSnapshot<List<ListItem>> snapshot) {
           final listitems =
               snapshot.data.where((c) => c.itemDay == "TUESDAY").toList() ??
@@ -163,7 +163,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   StreamBuilder<List<ListItem>> _buildWednesdayList(BuildContext context) {
     final database = Provider.of<AppDatabase>(context);
     return StreamBuilder(
-        stream: database.watchAllListItems(),
+        stream: database.watchAllListItemsSort(),
         builder: (context, AsyncSnapshot<List<ListItem>> snapshot) {
           final listitems =
               snapshot.data.where((c) => c.itemDay == "WEDNESDAY").toList() ??
@@ -180,7 +180,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   StreamBuilder<List<ListItem>> _buildThursdayList(BuildContext context) {
     final database = Provider.of<AppDatabase>(context);
     return StreamBuilder(
-        stream: database.watchAllListItems(),
+        stream: database.watchAllListItemsSort(),
         builder: (context, AsyncSnapshot<List<ListItem>> snapshot) {
           final listitems =
               snapshot.data.where((c) => c.itemDay == "THURSDAY").toList() ??
@@ -197,7 +197,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   StreamBuilder<List<ListItem>> _buildFridayList(BuildContext context) {
     final database = Provider.of<AppDatabase>(context);
     return StreamBuilder(
-        stream: database.watchAllListItems(),
+        stream: database.watchAllListItemsSort(),
         builder: (context, AsyncSnapshot<List<ListItem>> snapshot) {
           final listitems =
               snapshot.data.where((c) => c.itemDay == "FRIDAY").toList() ??
