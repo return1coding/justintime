@@ -11,10 +11,10 @@ The app has been submitted to the play store and is awaiting review.
 
  - Add and remove timetable entries. 
  - Select color of each entry.
+ - Sort entries by time
 
 ## Upcoming
 
- - Sort entries by time
  - Edit entries on tap
  - Hero animations
  
